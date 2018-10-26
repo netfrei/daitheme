@@ -1,0 +1,21 @@
+// Default theme variables
+
+@font-face {
+    font-family: Cargan;
+    src: url([[font:theme|CarganLig.otf]]);
+}
+$pagemaxwidth: 1300px;
+
+$slideshowheight: 250px;
+$backgroundcolor: #e2e2e0;
+
+
+$nfblue:#557ebb;
+$blocks:#ddb60b;
+
+
+$courseboxheight: 322px;
+@mixin nfcoursebox {
+max-width: 322px;
+min-width: 322px;
+ }

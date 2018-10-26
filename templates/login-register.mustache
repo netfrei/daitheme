@@ -1,0 +1,6 @@
+<div class="btn-group btn-group-sm">
+    {{^loggedIn}}
+        <span class="d-none d-md-inline"><a class="login-link nav-link" href="{{{siteurl}}}/login/index.php">   {{# str }} login-link, theme_dai {{/ str }}</a></span>
+        <span class="d-none d-md-inline"><a class="login-link nav-link" href="{{{siteurl}}}/login/signup.php">  {{# str }} register-link, theme_dai {{/ str }}</a></span>
+    {{/loggedIn}}
+</div>
