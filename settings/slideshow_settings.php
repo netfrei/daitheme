@@ -17,20 +17,20 @@
 /**
  * Heading and course images settings page file.
  *
- * @packagetheme_dai
+ * @packagetheme_nfdai
  * @copyright  
  * @creditstheme_boost - MoodleHQ
  * @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
-$page = new admin_settingpage('theme_dai_slideshow', get_string('slideshowsettings', 'theme_dai'));
+$page = new admin_settingpage('theme_nfdai_slideshow', get_string('slideshowsettings', 'theme_nfdai'));
 
 
 // Show hide user enrollment toggle.
-$name = 'theme_dai/showslideshow';
-$title = get_string('showslideshow', 'theme_dai');
-$description = get_string('showslideshow_desc', 'theme_dai');
+$name = 'theme_nfdai/showslideshow';
+$title = get_string('showslideshow', 'theme_nfdai');
+$description = get_string('showslideshow_desc', 'theme_nfdai');
 $default = 0;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -38,136 +38,136 @@ $page->add($setting);
 
 
 // This is the descriptor for slide
-$name = 'theme_dai/slide1info';
-$heading = get_string('slide1info', 'theme_dai');
-$information = get_string('slide1infodesc', 'theme_dai');
+$name = 'theme_nfdai/slide1info';
+$heading = get_string('slide1info', 'theme_nfdai');
+$information = get_string('slide1infodesc', 'theme_nfdai');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
 // Slide title
-$name = 'theme_dai/slide1title';
-$title = get_string('slidetitle', 'theme_dai');
-$description = get_string('slidetitle_desc', 'theme_dai');
+$name = 'theme_nfdai/slide1title';
+$title = get_string('slidetitle', 'theme_nfdai');
+$description = get_string('slidetitle_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 //Slide Description
-$name = 'theme_dai/slide1content';
-$title = get_string('slidecontent', 'theme_dai');
-$description = get_string('slidecontent_desc', 'theme_dai');
+$name = 'theme_nfdai/slide1content';
+$title = get_string('slidecontent', 'theme_nfdai');
+$description = get_string('slidecontent_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 // logo image.
-$name = 'theme_dai/slide1image';
-$title = get_string('slideimage', 'theme_dai');
-$description = get_string('slideimage_desc', 'theme_dai');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+//$name = 'theme_nfdai/slide1image';
+//$title = get_string('slideimage', 'theme_nfdai');
+//$description = get_string('slideimage_desc', 'theme_nfdai');
+//$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
+//$setting->set_updatedcallback('theme_reset_all_caches');
+//$page->add($setting);
 
 // This is the descriptor for slide
-$name = 'theme_dai/slide2info';
-$heading = get_string('slide2info', 'theme_dai');
-$information = get_string('slide2infodesc', 'theme_dai');
+$name = 'theme_nfdai/slide2info';
+$heading = get_string('slide2info', 'theme_nfdai');
+$information = get_string('slide2infodesc', 'theme_nfdai');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
 // Slide title
-$name = 'theme_dai/slide2title';
-$title = get_string('slidetitle', 'theme_dai');
-$description = get_string('slidetitle_desc', 'theme_dai');
+$name = 'theme_nfdai/slide2title';
+$title = get_string('slidetitle', 'theme_nfdai');
+$description = get_string('slidetitle_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 //Slide Description
-$name = 'theme_dai/slide2content';
-$title = get_string('slidecontent', 'theme_dai');
-$description = get_string('slidecontent_desc', 'theme_dai');
+$name = 'theme_nfdai/slide2content';
+$title = get_string('slidecontent', 'theme_nfdai');
+$description = get_string('slidecontent_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 // logo image.
-$name = 'theme_dai/slide2image';
-$title = get_string('slideimage', 'theme_dai');
-$description = get_string('slideimage_desc', 'theme_dai');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide2image');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+//$name = 'theme_nfdai/slide2image';
+//$title = get_string('slideimage', 'theme_nfdai');
+//$description = get_string('slideimage_desc', 'theme_nfdai');
+//$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide2image');
+//$setting->set_updatedcallback('theme_reset_all_caches');
+//$page->add($setting);
 
 // This is the descriptor for slide
-$name = 'theme_dai/slide3info';
-$heading = get_string('slide3info', 'theme_dai');
-$information = get_string('slide3infodesc', 'theme_dai');
+$name = 'theme_nfdai/slide3info';
+$heading = get_string('slide3info', 'theme_nfdai');
+$information = get_string('slide3infodesc', 'theme_nfdai');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 // Slide title
-$name = 'theme_dai/slide3title';
-$title = get_string('slidetitle', 'theme_dai');
-$description = get_string('slidetitle_desc', 'theme_dai');
+$name = 'theme_nfdai/slide3title';
+$title = get_string('slidetitle', 'theme_nfdai');
+$description = get_string('slidetitle_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 //Slide Description
-$name = 'theme_dai/slide3content';
-$title = get_string('slidecontent', 'theme_dai');
-$description = get_string('slidecontent_desc', 'theme_dai');
+$name = 'theme_nfdai/slide3content';
+$title = get_string('slidecontent', 'theme_nfdai');
+$description = get_string('slidecontent_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 // logo image.
-$name = 'theme_dai/slide3image';
-$title = get_string('slideimage', 'theme_dai');
-$description = get_string('slideimage_desc', 'theme_dai');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+//$name = 'theme_nfdai/slide3image';
+//$title = get_string('slideimage', 'theme_nfdai');
+//$description = get_string('slideimage_desc', 'theme_nfdai');
+//$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
+//$setting->set_updatedcallback('theme_reset_all_caches');
+//$page->add($setting);
 
 
 
 // This is the descriptor for slide
-$name = 'theme_dai/slide4info';
-$heading = get_string('slide4info', 'theme_dai');
-$information = get_string('slide4infodesc', 'theme_dai');
+$name = 'theme_nfdai/slide4info';
+$heading = get_string('slide4info', 'theme_nfdai');
+$information = get_string('slide4infodesc', 'theme_nfdai');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 // Slide title
-$name = 'theme_dai/slide4title';
-$title = get_string('slidetitle', 'theme_dai');
-$description = get_string('slidetitle_desc', 'theme_dai');
+$name = 'theme_nfdai/slide4title';
+$title = get_string('slidetitle', 'theme_nfdai');
+$description = get_string('slidetitle_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 //Slide Description
-$name = 'theme_dai/slide4content';
-$title = get_string('slidecontent', 'theme_dai');
-$description = get_string('slidecontent_desc', 'theme_dai');
+$name = 'theme_nfdai/slide4content';
+$title = get_string('slidecontent', 'theme_nfdai');
+$description = get_string('slidecontent_desc', 'theme_nfdai');
 $default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 // logo image.
-$name = 'theme_dai/slide4image';
-$title = get_string('slideimage', 'theme_dai');
-$description = get_string('slideimage_desc', 'theme_dai');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide4image');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+//$name = 'theme_nfdai/slide4image';
+//$title = get_string('slideimage', 'theme_nfdai');
+//$description = get_string('slideimage_desc', 'theme_nfdai');
+//$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide4image');
+//$setting->set_updatedcallback('theme_reset_all_caches');
+//$page->add($setting);
 
 // Must add the page after definiting all the settings!
 $settings->add($page);

@@ -1,0 +1,216 @@
+body {
+background:$backgroundcolor;
+}
+h1, h2, h3, h4 {
+	font-family:Cargan;
+color:$nfblue;
+}
+h3, .h3 {
+	font-weight: 400;
+	color: #567eba;
+}
+h1, .h1 {
+	font-size: 3rem;
+	line-height:1.9;
+}
+a .coursetitle {
+	color:#fff;
+	margin:10px 0 0;
+}
+.centerit {
+	text-align:center;
+}
+#page {
+max-width:$pagemaxwidth;
+}
+.sitetopic p {
+	font-size: 1.7375rem;
+	font-weight: 400;
+	line-height: 1.7;
+}
+.sitetopic hr {
+ border-top: 4px solid $nfblue;
+	margin: 1.8rem 0;
+}
+.btn-secondary, .btn-default {
+	color: #ffffff;
+	background-color: transparent;
+	border-color: transparent;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+ .carousel {
+	background:url([[pix:theme|slider/slide1]])no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	max-height:419px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+	z-index: 10;
+	bottom: 3.3rem;
+}
+/* Declare heights because of positioning of img element */
+.carousel-item {
+	height: 32rem;
+	background:transparent;
+}
+.carousel-item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 32rem;
+}
+.carousel-caption {
+	z-index: 10;
+	top: 0;
+	padding-top: 7%;
+	left: 5%;
+	text-align: left;
+	right: auto;
+	line-height: 1em;
+	height: 419px;
+	width: 90%;
+	font-size: 2.1rem;
+	font-family:Cargan;
+}
+.carousel-indicators {
+	right: auto;
+	left: 0;
+	margin-right: 15%;
+	top: 102%;
+	margin-left: auto;
+}
+.carousel-indicators li {
+	width: 10px;
+	height: 10px;
+	border-radius: 26px;
+	background-color: #567eba;
+}
+.carousel-indicators .active {
+	background-color: #939292;
+}
+.carousel-control {
+	position:absolute;
+	top:39%;
+	color:#fff;
+}
+.right.carousel-control {
+	right:0;
+	padding: 0 1%;
+}
+.fa-angle-left, .fa-angle-right {
+	font-size:100px;
+	font-weight:100;
+}
+.carousel h3 {
+	font-family:Cargan;
+	font-size:2.3rem;
+	color:#fff;
+}
+/*
+* Boxes
+-------------*/
+ .class-box {
+ border: 1px solid #dee2e6;
+ padding: 0;
+ margin-bottom: 2rem;
+ height: $courseboxheight;
+ overflow: hidden;
+}
+.courseimagecontainer {
+	height: calc(45%);
+}
+.course-image-view {
+	height: 100%;
+}
+.courseimagecontainer {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.course-info {
+	background: rgba(53, 50, 50, .83);
+	height: 50%;
+	margin-top: -150px;
+	padding: 10px;
+	color: #fff;
+	width: 100%;
+}
+.course-info a {
+	color:#fff;
+}
+/*  Presets
+/*************************************************************/
+/* 
+* reanrange columns
+*/
+/*[data-region="blocks-column"] {
+    width: 100%;
+    float: left;
+}*/
+/* 
+* navbar
+*/
+nav.fixed-top {
+	background: #567eba !important;
+}
+.navbar {
+	max-height: 61px;
+}
+/*
+* search container
+*/
+#daicoursesearch .searchContainer {
+	height: 2.2em!important;
+}
+#region-main-settings-menu.has-blocks, #region-main.has-blocks {
+	display: inline-block;
+	width: 100%;
+}
+#page-site-index .card-body {
+	padding:0;
+}
+#page-site-index #page-wrapper {
+	padding:3em;
+}
+.card, #page-enrol-users #filterform, .que .history, .userprofile .profile_tree section, .groupinfobox, .well {
+	background-color: #e2e2e0;
+	border: none;
+}
+/*
+* Side Regions blocks only frontpage
+*/
+#page-site-index #block-region-side-pre {
+	display:flex;
+	flex-wrap: wrap;
+	height: 100%;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+#page-site-index #block-region-side-pre h5.card-title {
+	display:none;
+}
+#page-site-index #block-region-side-pre .card-text, #page-site-index #block-region-side-pre .card-text a {
+	font-size: 2.1rem;
+	font-family: Cargan;
+	color:#fff;
+}
+#bottomblocks {
+ background-color:$nfblue;
+	padding: 50px 0;
+}
+#bottomblockswrap {
+max-width:$pagemaxwidth;
+	margin:0 auto;
+}
+#bottomblocks .block {
+ background-color:$blocks;
+	width: 30%;
+	max-width: 300px;
+	height:300px;
+	flex-shrink: 1;
+}

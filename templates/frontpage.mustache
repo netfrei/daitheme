@@ -44,7 +44,7 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_dai/navbar}}
+    {{>theme_nfdai/navbar}}
 
     <div id="page" class="container-fluid">
         <div id="page-content" class="row">
@@ -52,20 +52,18 @@
                 {{#hasregionmainsettingsmenu}}
                 <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
                     <div> {{{ output.region_main_settings_menu }}} </div>
+
                 </div>
-                {{/hasregionmainsettingsmenu}}
+                {{/hasregionmainsettingsmenu}} 
                 <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
                     <div class="card">
                         <div class="card-body">
                             {{#hasregionmainsettingsmenu}}
                                 <div class="region_main_settings_menu_proxy"></div>
                             {{/hasregionmainsettingsmenu}}
-                            {{{ output.course_content_header }}}
-							
- 							{{{ output.fp_slideshow }}}
-							
+                            {{{ output.course_content_header }}}				
+ 			    {{{ output.fp_slideshow }}}
                            {{{ output.main_content }}}
-							
                             {{{ output.activity_navigation }}}
                             {{{ output.course_content_footer }}}
 							
@@ -76,7 +74,8 @@
             </div>
         </div>
     </div>
-    {{> theme_boost/nav-drawer }}
+    {{> theme_nfdai/nav-drawer }}
+
 </div>
 <div id="bottomblocks">
 	<div id="bottomblockswrap">
@@ -85,7 +84,7 @@
 	{{/hasblocks}}
 	</div>
 </div>
-{{> theme_dai/footer }}
+{{> theme_nfdai/footer }}
 
 </body>
 </html>
@@ -94,4 +93,31 @@ require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
+require(['theme_boost/carousel']);
+$(document).ready(function() {
+    $('.left.carousel-control').hide();
+    checkitem();
+      
+});
+
+$('.carousel').on('slid.bs.carousel',checkitem);
+
+function checkitem()                        // check function
+{
+    var $this = $('.carousel');
+    if ($('.carousel-inner .carousel-item:first').hasClass('active')) {
+        // Hide left arrow
+        $this.children('.left.carousel-control').hide();
+        // But show right arrow
+        $this.children('.right.carousel-control').show();
+    } else if ($('.carousel-inner .carousel-item:last').hasClass('active')) {
+        // Hide right arrow
+        $this.children('.right.carousel-control').hide();
+        // But show left arrow
+        $this.children('.left.carousel-control').show();
+    } else {
+        $this.children('.carousel-control').show();
+    }
+}
+
 {{/js}}

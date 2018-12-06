@@ -1,0 +1,68 @@
+// Default theme variables
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+$min_width: 300px;
+$max_width: 1300px;
+$min_font: 13px;
+$max_font: 15px;
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+ 
+@font-face {
+  font-family: "Source Sans Pro";
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+    font-family: Cargan;
+    src:url([[font:theme|CarganLig.otf]]);
+}
+$desktop-width: 1024px;
+$tablet-width: 768px;
+
+$padall20:20px;
+
+$pagemaxwidth: 1300px;
+$slideshowheight: 250px;
+$backgroundcolor: #e2e2e0;
+$nfblue:rgba(85, 114, 161,1);
+$nfbluetransparent:rgba(85, 114, 161, 0.9) !important; 
+$nfgelb:#ddb60b;
+$courseboxW: 300px;
+$courseboxH: 300px;
+$courseboxHH:150px;
+
+$courseImageHeight: 253px;
+$courseTextOnImage: 215px;
+
+
+@mixin nfcoursebox {
+max-width: 321px;
+min-width: 321px;
+}
+
+ 

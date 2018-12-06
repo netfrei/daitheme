@@ -1,5 +1,4 @@
 <?php
-
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -7,20 +6,20 @@ defined('MOODLE_INTERNAL') || die();
  *
  * @param string $tree The CSS tree.
  * @param theme_config $theme The theme config object.
+*/ 
 
-
-function theme_dai_css_tree_post_processor($tree, $theme) {
+function theme_nfdai_css_tree_post_processor($tree, $theme) {
     $prefixer = new theme_boost\autoprefixer($tree);
     $prefixer->prefix();
 }
-*/ 
+
 /*
  * Returns the main SCSS content.
  *
  * @param theme_config $theme The theme config object.
  * @return string
  */
- function theme_dai_get_main_scss_content($theme) {
+ function theme_nfdai_get_main_scss_content($theme) {
     global $CFG;
 
     $scss = '';
@@ -35,19 +34,19 @@ function theme_dai_css_tree_post_processor($tree, $theme) {
         // We still load the default preset files directly from the boost theme. No sense in duplicating them.
         $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/plain.scss');
 
-    } else if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_dai', 'preset', 0, '/', $filename))) {
+    } else if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_nfdai', 'preset', 0, '/', $filename))) {
         // This preset file was fetched from the file area for theme_photo and not theme_boost (see the line above).
         $scss .= $presetfile->get_content();
     } else {
         // Safety fallback - maybe new installs etc.
         $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
     }
-  	$scss .= file_get_contents($CFG->dirroot . '/theme/dai/scss/dai_variables.scss');
-  	$scss .= file_get_contents($CFG->dirroot . '/theme/dai/scss/style.scss');
-    // Pre CSS - this is loaded AFTER any prescss from the setting but before the main scss.
-    $pre = file_get_contents($CFG->dirroot . '/theme/dai/scss/pre.scss');
-    // Post CSS - this is loaded AFTER the main scss but before the extra scss from the setting.
-    $post = file_get_contents($CFG->dirroot . '/theme/dai/scss/post.scss');
+  	$scss .= file_get_contents($CFG->dirroot . '/theme/nfdai/scss/nfdai_variables.scss');
+  	$scss .= file_get_contents($CFG->dirroot . '/theme/nfdai/scss/style.scss');
+        // Pre CSS - this is loaded AFTER any prescss from the setting but before the main scss.
+        $pre = file_get_contents($CFG->dirroot . '/theme/nfdai/scss/pre.scss');
+        // Post CSS - this is loaded AFTER the main scss but before the extra scss from the setting.
+         $post = file_get_contents($CFG->dirroot . '/theme/nfdai/scss/post.scss');
 
     // Combine them together.
     return $pre . "\n" . $scss . "\n" . $post;
@@ -61,7 +60,7 @@ function theme_dai_css_tree_post_processor($tree, $theme) {
  * @param theme_config $theme The theme config object.
  * @return array
  */
-function theme_dai_get_pre_scss($theme) {
+function theme_nfdai_get_pre_scss($theme) {
     global $CFG, $PAGE;
 
     $pres= '';
@@ -124,10 +123,10 @@ function theme_dai_get_pre_scss($theme) {
  *
  * @param $settingname
  */
-function theme_dai_update_settings_images($settingname) {
+function theme_nfdai_update_settings_images($settingname) {
     global $CFG;
 
-    // The setting name that was updated comes as a string like 's_theme_dai_loginbackgroundimage'.
+    // The setting name that was updated comes as a string like 's_theme_nfdai_loginbackgroundimage'.
     // We split it on '_' characters.
     $parts = explode('_', $settingname);
     // And get the last one to get the setting name..
@@ -136,7 +135,7 @@ function theme_dai_update_settings_images($settingname) {
     // Admin settings are stored in system context.
     $syscontext = context_system::instance();
     // This is the component name the setting is stored in.
-    $component = 'theme_dai';
+    $component = 'theme_nfdai';
 
 
     // This is the value of the admin setting which is the filename of the uploaded file.
@@ -148,13 +147,13 @@ function theme_dai_update_settings_images($settingname) {
     $fullpath = "/{$syscontext->id}/{$component}/{$settingname}/0{$filename}";
 
     // This location matches the searched for location in theme_config::resolve_image_location.
-    $pathname = $CFG->dataroot . '/pix_plugins/theme/dai/' . $settingname . '.' . $extension;
+    $pathname = $CFG->dataroot . '/pix_plugins/theme/nfdai/' . $settingname . '.' . $extension;
 
     // This pattern matches any previous files with maybe different file extensions.
-    $pathpattern = $CFG->dataroot . '/pix_plugins/theme/dai/' . $settingname . '.*';
+    $pathpattern = $CFG->dataroot . '/pix_plugins/theme/nfdai/' . $settingname . '.*';
 
     // Make sure this dir exists.
-    @mkdir($CFG->dataroot . '/pix_plugins/theme/dai/', $CFG->directorypermissions, true);
+    @mkdir($CFG->dataroot . '/pix_plugins/theme/nfdai/', $CFG->directorypermissions, true);
 
     // Delete any existing files for this setting.
     foreach (glob($pathpattern) as $filename) {

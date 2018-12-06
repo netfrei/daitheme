@@ -1,18 +1,198 @@
-body {
-background:$backgroundcolor;
-}
-h1, h2, h3, h4 {
+
+body#page-site-index,
+body#page-course-index-category,
+body#page-course-index,
+body#page-login-index,
+body#page-enrol-index,
+body#page-login-signup,
+body#page-course-search,
+body#page-course-view-topics{
+    background:$backgroundcolor;
+    h1, h2, h3, h4 {
 	font-family:Cargan;
-color:$nfblue;
+        color:$nfblue;
+    }
+    h3, .h3 {
+            font-weight: 400;
+            color: #567eba;
+    }
+    h1, .h1 {
+            font-size: 3rem;
+            line-height:1.9;
+    }
+    .carousel-caption {
+        h1,h2,h3,h4,h5,h6{
+            color: white;
+        }
+    }          
+    .course-title{
+        h1,h2,h3,h4,h5,h6{
+            color: white;
+        } 
+    }
 }
-h3, .h3 {
+body#page-course-view-topics{
+    .course-content{
+        margin-left: -10px;
+        h3.sectionname{
+            color: #fff;
+            font-family:Cargan;
+            font-size:3.4rem;
+            @include fluid-type(300px, 1300px, 27px, 51px);
+        }  
+        h3.sectionname{
+            
+            padding: 0 67px;
+            position: absolute;
+            margin-top: 45px;
+        }
+        h3.sectionname a{
+            color: #fff;
+        }
+    }
+    .summary{
+        margin-left: 11px;
+        font-size: 1.7375rem;
 	font-weight: 400;
-	color: #567eba;
+	line-height: 1.7;
+        img{
+            margin-left: -10px;
+        }
+        
+    }
+
 }
-h1, .h1 {
-	font-size: 3rem;
-	line-height:1.9;
+body#page-course-search {
+    #add, #remove, .centerpara, .mdl-align{
+        text-align:inherit;
+    }
+    .coursescontainer{ 
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0;
+        .class-box{
+             margin: 20px 21px 21px 0;
+        }
+    }
 }
+nav.fixed-top {
+ 
+  background:$backgroundcolor;
+  color: white !important;
+  ul.navbar-nav a.dropdown-toggle {
+    color: white !important;
+  }
+  div.popover-region-toggle .fa {
+    color: white !important;
+  }
+}
+.d-block{
+    padding:20px 0 0; 
+}
+
+#nav-drawer{
+    background-color: rgb(250, 250, 250);
+    font-size:1.12rem;
+    #blockleft{
+        margin-top: 0;
+        section {
+            padding:0.5rem 0 0;           
+            border: none;
+            background: transparent;
+        }
+        
+        .card-body h5{
+            font-size: 14px;
+            font-weight: bold;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .block_course_list .icon{
+            display: none;
+        }
+        .unlist li{
+            padding: 0;
+        }
+        a{
+            color: #495057;
+        }
+        a:hover{
+            color: #223657;
+        }
+        .block_tree .tree_item.branch{
+         margin-left: 0;
+         padding-left: 0;
+        }
+        .mt-3, .my-3{
+            margin-top: 0!important;
+        }
+        .course_list {
+            .card-body{
+               padding: 0 1.5rem
+            }
+            .card-text{
+            margin-top: 0.4em !important;
+            padding-left: 0.5em;
+            }
+        }
+        .block_course_summary .content{
+            padding: 0;
+        }
+    }
+    .list-group-item{
+        background-color:transparent;
+        border: none ;
+        padding:  0.5rem 1.25rem;
+    }
+    .list-group-item.active {
+        background-color:transparent;
+        border: none ;
+        color: inherit;
+    }
+    .m-t-1, .m-y-1{
+        margin-top:0!important;
+    }
+}
+.btn-primary, 
+.show>.btn-primary.dropdown-toggle{
+    background-color: $nfblue;
+    border-color: $nfblue;
+}
+
+
+#page-login-index {
+    .rememberpass.mt-3{
+        margin-bottom: 40px;
+    }
+    .card-body{
+        text-align: center;
+    }
+}
+
+.block_myoverview{
+    .block-myoverview{
+        background-color: #f2f2f2;
+    }   
+    .nav-tabs {
+      
+        background-color: #c1c1c166;
+    }
+}
+
+#page-footer{
+  background-color: $nfblue !important;
+  color: black;
+  a{
+      color: #fff !important;
+  }
+  .container{
+        text-align: center;
+  }
+}
+.navbar-expand .navbar-nav{
+    display: -webkit-box;
+}
+
 a .coursetitle {
 	color:#fff;
 	margin:10px 0 0;
@@ -20,14 +200,155 @@ a .coursetitle {
 .centerit {
 	text-align:center;
 }
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .3rem;
+    padding-left: .3rem;
+    color: #868e96;
+    content: ">";
+}
+#page-course-index-category {
+    
+    .category{
+        display: flex;
+    }
+    .content.wrapall{
+      display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 102%;
+    }
+    .course-summary .coursecat{
+        display: none;   
+    }
+    .subcategories{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+    }
+    .class-box {
+           margin: 20px 21px 21px 0;
+    }
+    
+    .row{
+        justify-content: flex-start;
+    }
+    .class-list h2{
+         display: none;
+    }
+    .header-courses{
+        text-align: center;
+        margin: 0;
+    } 
+    .categorypicker {
+        text-align:unset;
+        display: none;
+    }   
+    .generalbox.info{
+        background:url([[pix:theme|category/iDAI_moocs_category]])no-repeat top left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+        height: $courseImageHeight;
+        color: #fff;
+        padding:$padall20;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+         
+        padding:0 67px;
+        th{
+            background-image: none !important;
+            h1,h2, h3,h4,h5,h6{
+                 color: #fff;
+            }
+        }
+        .no-overflow{  
+            margin-top: 24px;
+            font-family: Cargan;
+            /*@include fluid-type(800px, 1300px, 27px, 30px);*/
+           @include fluid-type(800px, 1300px, 27px, 28px);
+            overflow: hidden;
+            position: relative;
+            line-height: 1.2em;
+            max-height: 6em;
+            margin-right: -1em;
+            padding-right: 1em;
+        }
+        .no-overflow:before {
+                /* content: '...'; we don't want the Ellipses here*/
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+        }
+        .no-overflow:after {
+                /* content: '...'; we don't want the Ellipses here*/
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 1em;
+                height: 1em;
+                margin-top: 0.2em;
+        }
+        h1,h2,h3,h4,h5,h6{
+            color: #fff;
+            font-family:Cargan;
+            font-size:3.4rem;
+            font-weight: 400;
+             @include fluid-type(800px, 1300px, 27px, 51px);
+        }         
+    } 
+}
+
+ 
+
+.dropdown-menu{
+    -webkit-transform: translate3d(-8px,-2px,0);
+    -moz-transform: translate3d(-8px,-2px,0);
+    -ms-transform: translate3d(-8px,-2px,0);
+    -o-transform: translate3d(-8px,-2px,0);
+    transform: translate3d(-8px,-2px,0);
+    width: 250px;
+}
+ 
+
+.course_category_tree .category>.content{
+    padding-left: 0;
+}
+
+.page-context-header{
+    display: none;
+}
+.region_main_settings_menu_proxy{
+    background-color: transparent;
+}
+
+.mform>.form-group,
+.mform>.form-buttons, 
+.path-admin .mform>.buttons, 
+.mform>#fitem_id_submitbutton, 
+.fp-content-center form + .mform>div,
+div.backup-section + .mform>form, 
+.mform>#fgroup_id_buttonar{
+    margin-left: 0;
+    color:#fff;
+}
+.form-inline {
+    padding: 0;
+}
 #page {
 max-width:$pagemaxwidth;
 }
-.container-fluid{
-	padding:0;
+
+#page-site-index .row{
+   justify-content: center;
 }
 .box.generalbox.sitetopic{
 	padding-bottom:0 !important;
+        text-align: left;
 }
 .sitetopic p {
 	font-size: 1.7375rem;
@@ -43,82 +364,131 @@ max-width:$pagemaxwidth;
 	background-color: transparent;
 	border-color: transparent;
 }
+.dimmed_category{
+    display: none;
+}
 
 /* Carousel / Slider
 -------------------------------------------------- */
  .carousel {
-	background:url([[pix:theme|slider/slide1]])no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	max-height:419px;
+/*    background:url([[pix:theme|slider/iDAI_moocs_home_slider]])no-repeat center center;*/
+     background:url([[pix:theme|slider/iDAI_moocs_home_slider]])no-repeat top left;
+/*    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:400px;*/
+
+    height: 550px;
+    h1{
+     @include fluid-type(800px, 1300px, 51px, 55px);
+    }
+    h2{
+     @include fluid-type(800px, 1300px, 50px, 53px);
+    }
+    h3{
+      font-size:3.4rem;
+      @include fluid-type(800px, 1300px, 49px, 51px);
+    }
+    h4{
+     @include fluid-type(800px, 1300px, 37px, 30px);
+    }
+    .slide1{
+        h3{
+        font-size:3.4rem;
+         @include fluid-type(800px, 1300px, 49px, 120px);
+        }
+        h4{
+         line-height: 1.2em;
+         @include fluid-type(800px, 1300px, 37px, 40px);
+        }
+    }
+    
+    .carousel-caption {
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5em 7em 5em 3em;
+        text-align: left;
+        line-height: 1.5em;
+            
+        @include fluid-type(800px, 1300px, 27px, 30px);
+        font-family: Cargan;
+    }
+    /* Declare heights because of positioning of img element */
+    .carousel-item {
+        height: 100%;
+        background:transparent;
+        transition:0.5s;
+        opacity:0;
+    }
+    .carousel-item.active{
+           opacity: 1;
+           transition: 0.8s;
+    }
+    .carousel-item > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 32rem;
+    }
+    .carousel-inner{
+        height: 100%;
+    }
+    .carousel-inner .carousel-item:first-child .carousel-caption {
+        padding-right: 80px;
+    }
+    .carousel-indicators {
+            right: auto;
+            left: 0;
+            margin-right: 15%;
+            top: 102%;
+            margin-left: auto;
+    }
+    .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 26px;
+            background-color: #567eba;
+    }
+    .carousel-indicators .active {
+            background-color: #939292;
+    }
+    .carousel-control {
+            position:absolute;
+            top:44%;
+            color:#fff;
+    }
+    .carousel-control:hover {
+        color: #939292;
+    }
+    .left.carousel-control{
+        display: none;
+        padding: 0 1%;
+    }
+    .right.carousel-control {
+            right:0;
+            padding: 0 1%;
+    }
+    .fa-angle-left, .fa-angle-right {
+            font-size: 4.4rem;
+            font-size: 65px;
+            font-weight:100;
+    }
+    .specialtext{
+        position: absolute;
+        top: 253px;
+        right: 46px;
+        font-size: 20px;
+    }
 }
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-	z-index: 10;
-	bottom: 3.3rem;
-}
-/* Declare heights because of positioning of img element */
-.carousel-item {
-	height: 32rem;
-	background:transparent;
-}
-.carousel-item > img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	min-width: 100%;
-	height: 32rem;
-}
-.carousel-caption {
-	z-index: 10;
-	top: 0;
-	padding-top: 7%;
-	left: 5%;
-	text-align: left;
-	right: auto;
-	line-height: 1.5em;
-	height: 419px;
-	width: 90%;
-	font-size: 2.1rem;
-	font-family:Cargan;
-}
-.carousel-indicators {
-	right: auto;
-	left: 0;
-	margin-right: 15%;
-	top: 102%;
-	margin-left: auto;
-}
-.carousel-indicators li {
-	width: 10px;
-	height: 10px;
-	border-radius: 26px;
-	background-color: #567eba;
-	;
-}
-.carousel-indicators .active {
-	background-color: #939292;
-}
-.carousel-control {
-	position:absolute;
-	top:39%;
-	color:#fff;
-}
-.right.carousel-control {
-	right:0;
-	padding: 0 1%;
-}
-.fa-angle-left, .fa-angle-right {
-	font-size:100px;
-	font-weight:100;
-}
-.carousel h3 {
-	font-family:Cargan;
-	font-size:2.3rem;
-	color:#fff;
-}
+
+
+
+
 /* Boxes
 -------------------------------------*/  
 
@@ -128,10 +498,69 @@ max-width:$pagemaxwidth;
  .class-box {
  border: 1px solid #dee2e6;
  padding: 0;
- margin-bottom: 2rem;
- height: $courseboxheight;
+ margin-bottom: 21px;
+ height: $courseboxH;
+ width: $courseboxW;
+ position: relative;
  overflow: hidden;
+ 
+
+.course-title{
+        overflow: hidden;
+        position: relative;
+        max-height: 7em;
+        margin-right: -1em;
+        padding-right: 1em;    
+    :before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+    }
+    :after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 1em;
+            height: 1em;
+            margin-top: 0.2em;
+    }  
+ }
 }
+.class-box.comingsoon::before,
+.class-box.comingsoon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.class-box.comingsoon::before {
+    border-width: 0;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+.class-box.comingsoon::after {
+    border-radius: 0;
+    border-width: 4em;
+    border-right-color: $nfblue;
+    border-top-color: $nfblue;
+    right: 0;
+    color: #fff;
+}
+
+.cornertext{  
+    position: absolute;
+    top: 14px;
+    right: 13px;
+    z-index: 100;
+    color: #fff;   
+    width: 50px;
+    text-align: right;
+    font-size: 14px;
+}
+
 .courseimagecontainer {
 	height: calc(45%);
 }
@@ -147,29 +576,74 @@ max-width:$pagemaxwidth;
 	background: rgba(53, 50, 50, .83);
 	height: 50%;
 	margin-top: -148px;
-	padding: 10px;
+	padding: 10px 20px;
 	color: #fff;
 	width: 100%;
+        .course-title{
+            margin-top: 5px;
+        }
+        a {
+            color:#fff;
+        }
+        h4{
+            font-size: 1.35rem;
+            line-height: 1.4em;
+        }
+        
+         
 }
-.course-info a {
-	color:#fff;
+#page-site-index .course-info .course-title{
+    margin-top: 0px;
 }
+
 .nfcourseboxes{
  	@include nfcoursebox;
 }
+
 /*  navbar
 -----------------------------*/
 nav.fixed-top {
-	background: #567eba !important;
+	background: $nfbluetransparent;
 }
 .navbar {
 	max-height: 61px;
+        padding: .5rem 2rem;
 }
 /*search container
 -------------------------------------------------*/
-#daicoursesearch .searchContainer {
-	height: 2.2em!important;
+#daicoursesearch  {
+    .searchContainer {
+        height: 2.2em!important;
+         display: inline-flex;
+         flex: 1 1 300px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         overflow: hidden;
+         width: 300px;
+    }
+    .searchBox input{
+        padding: 0 10px;
+    }
+    
+  .searchIcon {
+    padding: 0.3rem;
+  }
+
+  .searchBox {
+    border: 0;
+    flex: 1;
+  }
+
+  .searchButton {
+    background: white;
+    border: 0;
+    color: rgba(85,114,161,.9);
+    padding: 0.3rem;
+    border-radius: 0;
+  }
 }
+
+
 #region-main-settings-menu.has-blocks, #region-main.has-blocks {
 	display: inline-block;
 	width: 100%;
@@ -180,11 +654,24 @@ nav.fixed-top {
 #page-site-index #page-wrapper {
 	padding:3em;
 }
-.card, #page-enrol-users #filterform, .que .history, .userprofile .profile_tree section, .groupinfobox, .well {
-	background-color: #e2e2e0;
-	border: none;
+#page-site-index #page-wrapper{
+    margin-bottom: -80px;
+}
+#page-site-index #page-wrapper::after {
+ 
+    min-height: 0;
 }
 
+.card, #page-enrol-users #filterform, .que .history, .userprofile .profile_tree section, .groupinfobox, .well {
+	background-color:transparent;
+	border: none;
+}
+.admin .card{
+    background-color: #fff;
+}
+#page-site-index .card{
+    background-color: transparent;
+}
 /* Side Regions blocks only frontpage
 ------------------------------------------------*/
 #page-site-index #block-region-side-pre {
@@ -193,46 +680,494 @@ nav.fixed-top {
    justify-content: center;
    flex-direction: row;
    flex-wrap: wrap;
- 	margin:-18px;
+ 	margin-left:-12px;
 }
 #page-site-index .card-body{
 	padding:20px;
 }
-#page-site-index #block-region-side-pre h5.card-title {
-	display:none !important;
-}
+
 #page-site-index #block-region-side-pre .card-text, 
 #page-site-index #block-region-side-pre .card-text a {
-	font-size: 2.1rem;
+	
+        font-size: 1.29rem;
 	font-family: Cargan;
 	color:#fff;
 }
-#bottomblocks {
- background-color:$nfblue;
-	padding: 50px 0;
-}
-#bottomblockswrap {
-max-width:$pagemaxwidth;
-	margin:0 auto;
-}
-#bottomblocks .block {
- background-color:$blocks;
-	flex: 0 0 30%;
-    height: 320px;
-    margin: 18px auto 18px 18px;
-    overflow: hidden;
-}
+
 @media (max-width: 1061px){
 	#page-site-index #block-region-side-pre {
-	margin:auto;
+	margin:0;
 	}
-	#bottomblocks .block {
 	 
-		margin-right: auto;
-	}
 }
 /*
 * Skin backend
 ------------------------------------*/
 .btn-secondary, .btn-default{
 background-color: $nfblue;}
+
+/*
+* Misc
+-----------------------------------*/
+.enrolmenticons{
+    max-width: 30px;
+    display: inline;
+    margin-left: 20px;
+}
+.lang-ar .fa-angle-left,
+.lang-ar .fa-angle-right
+{
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+}
+
+.course_category_tree .category >.info > .categoryname {
+    background-image: none;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+.card-body, .userprofile .profile_tree section {
+    padding: 0 1.25rem;
+}
+ 
+.singlebutton, 
+.addcategory, 
+.buttons{
+    text-align:justify !important;
+}
+#region-main>.card, 
+#page-enrol-users #region-main>#filterform, 
+.que #region-main>.history, 
+.userprofile .profile_tree #region-main>section, 
+#region-main>.groupinfobox, 
+#region-main>.well{
+    overflow: unset;
+}
+ 
+.courseimagecontainer{
+    background-color: #999;
+}
+.coursescontainer{
+    display: flex;
+    margin-left: 21px;
+}
+
+
+
+#page-course-index{
+    .row{
+        justify-content: flex-start;
+    }
+    .course_category_tree{
+        margin-top: -20px;  
+    }
+    .catcourseswrap{
+        display: flex;
+    
+        .coursesrow{
+            display: flex;
+        }
+    }
+    .class-list h2{
+        display: none;
+    }
+    .class-box {
+           margin: 0 21px 0 0;
+    }
+    .course-summary .coursecat{
+        display: none;   
+    }
+    .subcategories .subcategories{
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-start;
+    }
+    .header-courses{
+       display: none;
+    } 
+    .category.level1{    
+       .categoryname{
+            margin-top: 28px;
+            border-top: 4px solid;
+            padding-top: 3px;
+            margin-bottom: 0;
+       }
+    }
+    .control{
+        width:100%;
+        height:100%;
+        position:relative;
+    }
+    .right-arrow, .left-arrow{
+        position:absolute;
+        padding:0 26px;
+    }
+    .right-arrow i, .left-arrow i{
+        line-height:300px;
+        opacity: 0;
+    }
+    .fa-3x{
+        font-size: 7em;
+        font-weight: 400;
+        color: #fff;
+    }
+    .fa-3x:hover{
+        color:#939292;
+    }
+    .right-arrow{
+        left:0;   
+    }
+    .left-arrow{
+        right:0;
+    }
+
+    .catcourseswrap{
+        margin-top: 20px;
+        flex-wrap:nowrap;
+        height:$courseboxH;
+        position:relative;
+        overflow:hidden;
+    }
+    .coursesrow{
+        display:flex;
+        height:$courseboxH;
+        position: absolute;
+
+    }
+    .coursesrow .class-box{
+        width:$courseboxW;
+        height:$courseboxH;
+        position:relative;
+        float:left;
+
+    }    
+} 
+.viewallcourses{
+    text-align: center;
+    margin:0 auto;
+}
+#page-course-view-topics{
+    .img-fluid, .img-responsive {
+            width: 100%;
+    height: auto;
+    max-width: none;
+
+    }
+    
+} 
+#page-enrol-index {
+    .coursebox{
+        padding: 0;  
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .content .courseimage{
+        order: 1;
+        width: 100%;
+        height: $courseImageHeight;
+        overflow: hidden;
+    }
+    .content .summary{
+        order: 2;
+        width: 100%;
+    }
+    .content .courseimage img{
+        max-width: 100%;
+        max-height: none;   
+    }
+    .coursebox .info{
+        position: absolute;
+    }
+    .coursebox .info .coursename{
+        height: $courseTextOnImage;
+        margin-top: 40px;
+        width: 64%;
+        overflow: hidden;
+        text-align: left;
+        @include fluid-type($min_width, $max_width, 30px, 40px);
+    }
+    .coursebox .info .coursename a{
+        color: #fff;
+        background-image: none;
+    }  
+    .enrolmenticons .icon{
+        font-size: 22px;
+        margin-top: 55px;
+    }
+    .enrolmenticons .icon.fa-key::before{
+        color: #fff;
+    }
+    .content .summary{
+        font-size: 1.7375rem;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+    #id_submitbutton{
+        margin-left: 10px;
+    }
+} 
+#bottomblocks {
+    background-color:rgb(195, 194, 192);
+    padding: 20px 0;
+   .block {
+        background-color:#fff; 
+        height: $courseboxH;
+        width: $courseboxW;
+        margin: 18px auto 18px 22px;
+        overflow: hidden;    
+    } 
+    
+    .butt_course{
+        background:url([[pix:theme|buttons/iDAI_moocs_button_course]])no-repeat center center;
+    }
+    .butt_instructor{
+        background:url([[pix:theme|buttons/iDAI_moocs_button_instructor]])no-repeat center center;
+    }
+    .butt_resources{
+       background:url([[pix:theme|buttons/iDAI_moocs_button_resources]])no-repeat center center;
+    }
+    .butt_course, .butt_instructor, .butt_resources{
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height:$courseboxH;
+        .card-body{
+            padding: 0;
+        }
+        .card-title {
+            display:none !important;
+         }
+        .card-text{
+            position: absolute;
+            bottom: 0;
+            font-size: 1.78rem;
+            
+            height: $courseboxHH;
+            color: white;
+            width: $courseboxW;
+            text-align:center;
+            .no-overflow{ 
+                overflow: hidden;
+            }
+            a,h1,h2,h3,h4,h5,h6{
+                width: 80%;
+                margin: 0 auto;
+                padding: 0.3em 0.8em 0 .8em;
+                
+                color: white !important;
+            }
+        }  
+    }
+         
+}
+#bottomblockswrap{
+    max-width:$pagemaxwidth;
+    margin:0 auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;    
+}
+
+@media (max-width: 1400px){
+    #bottomblockswrap{
+        width: 955px;
+    }
+	 
+}
+@media (max-width: 1061px){
+    #bottomblockswrap{
+        width: 639px;
+        
+    }
+    #bottomblocks .block{
+        margin:6px auto 0 16px;
+    }
+    body.drawer-open-left{
+        .carousel .specialtext {
+            top: 257px;
+        }
+       .carousel .carousel-caption{
+            padding-right: 4em;
+            @include fluid-type(700px, 1000px, 18px, 23px);
+            h3{
+                @include fluid-type(700px, 1000px, 35px, 36px);
+            }
+            h4{
+                @include fluid-type(700px, 1000px, 24px, 26px);
+            }
+        } 
+    }	 
+}
+@media (max-width: 800px){
+    .carousel .carousel-caption{
+        padding-right: 4em;
+        @include fluid-type(700px, 800px, 24px, 27px);
+    }
+}
+@media (max-width: 750px){
+    #bottomblockswrap{
+        width: 330px;
+    }
+	 
+}
+@media (max-width: 768px){
+    #daicoursesearch .searchContainer {
+        width: 170px!important;
+    }
+}
+@media (min-width:300px)and (max-width:1024px){
+   #page-course-index-category .generalbox.info .no-overflow {
+    margin-top: 12px;
+    overflow:auto;     
+    line-height:initial;
+    max-height:8em;
+    margin-right:0; 
+     padding-right:0; 
+    font-size:23px;
+    }
+    #page-course-view-topics{
+        .img-fluid, .img-responsive {
+            width: auto;
+            height: 235px;
+            max-width: none;
+
+        }
+        .no-overflow{
+            overflow: hidden;
+        }  
+        
+    } 
+    
+}
+@media (max-width: 600px){
+    .sitetopic p{
+        font-size: 1.3rem;
+    }
+    body#page-site-index h1{
+        font-size: 2rem;
+    }
+    #page-site-index #page{
+        margin-top: 0;
+    }
+}
+@media (min-width:447px)and (max-width:599px){
+   #page-course-index-category .generalbox.info .no-overflow {
+  
+    line-height:initial;
+    max-height:10em;
+   
+    font-size:20px;
+    }
+    
+}
+@media (max-width: 447px){
+    .sitetopic p{
+        font-size: 1.1rem;
+    }
+    body#page-site-index h1{
+        font-size: 1.5rem;
+    }
+     
+}
+@media screen and (min-width: 447px) and (max-width: 768px) {
+    body#page-course-view-topics .course-content h3.sectionname{            
+        padding: 0 67px;
+        position: absolute;
+        margin-top: 65px;
+        font-size: 33px;
+    } 
+    .nav.navbar-nav.ml-auto{
+        margin-left: 29px !important;
+        .d-none{
+            display:block !important;
+        }   
+    }
+    #page-course-index-category .generalbox.info .no-overflow {
+   
+    max-height: 14em;
+    font-size: 15px;
+    }
+    
+}
+
+
+@media (min-width: 300px) and (max-width:  447px){
+     .sitetopic p{
+        font-size: 1rem;
+    }
+    body#page-site-index h1{
+        font-size: 1.2rem;
+    }
+    #page-site-index .card-body{
+        padding: 20px 0;
+    }
+    
+    #page-site-index #nav-drawer .card-body{
+        padding: 20px;
+    }
+    .nfcourseboxes {
+        max-width: 300px;
+        min-width: 300px;
+        margin-left: -30px;
+    }
+    .navbar{
+        padding:0.5rem 0.4rem; 
+    }
+    .navbar .d-inline-block.mr-3{
+        margin-right: 0 !important;
+    }
+    .rounded.in-nav{
+        display: none;
+    }
+    .nav.navbar-nav.ml-auto{
+        margin-left: 3px !important;
+        .d-none{
+            display:block !important;
+        }
+        
+    }
+    #page-course-index-category .generalbox.info .no-overflow {
+    margin-top: 12px;
+    overflow:auto;     
+    line-height:initial;
+    max-height:15em;
+    margin-right:0; 
+     padding-right:0; 
+     font-size: 15px;
+    }
+    #page-course-index-category .generalbox.info{
+        padding: 1.2em;
+    }
+    #page-enrol-index .coursebox .info .coursename{
+        font-size: 22px;
+    }
+}
+
+
+body.lang-en :lang(ar) {
+    display: none;
+}
+body.lang-ar :lang(en) {
+    display: none;
+}
+body.lang-ar {
+    .specialtext{
+        top: 244px;
+        font-size: 0.8em;
+    }
+    #action-menu-99-menu{
+        right:-12em;
+    }
+}
+ body.lang-ar #page-course-index-category .generalbox.info{
+    background:url([[pix:theme|category/catheader]])no-repeat left top;
+}
+ul#custom_footer_nav  li{
+    display: inline-block;
+    padding: 0 3em;
+}

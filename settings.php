@@ -9,8 +9,7 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
     // Note new tabs layout for admin settings pages.
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingdai', get_string('configtitle', 'theme_dai'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingnfdai', get_string('configtitle', 'theme_nfdai'));
     require('settings/slideshow_settings.php');
- 
 }
  

@@ -17,34 +17,22 @@
 /**
  * FileSettings Lib file.
  *
- * @package    theme_fordson
- * @copyright  2016 Chris Kenniburg
+ * @package    theme_nfdai
+ * @copyright  in curtesy to 2016 Chris Kenniburg
  * @credits    theme_boost - MoodleHQ
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/**
- * Serves any files associated with the theme settings.
- *
- * @param stdClass $course
- * @param stdClass $cm
- * @param context $context
- * @param string $filearea
- * @param array $args
- * @param bool $forcedownload
- * @param array $options
- * @return bool
- */
 
 defined('MOODLE_INTERNAL') || die();
 
-function theme_dai_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_nfdai_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     static $theme;
     if (empty($theme)) {
-        $theme = theme_config::load('dai');
+        $theme = theme_config::load('nfdai');
     }
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === '')) {
-        $theme = theme_config::load('dai');
+        $theme = theme_config::load('nfdai');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     }   else if ($filearea === 'slide1image') {
         return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
@@ -76,12 +64,12 @@ function theme_dai_pluginfile($course, $cm, $context, $filearea, $args, $forcedo
  * @param stdclass $CFG
  * @return string
  */
-function theme_dai_get_setting($setting, $format = false) {
+function theme_nfdai_get_setting($setting, $format = false) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
     static $theme;
     if (empty($theme)) {
-        $theme = theme_config::load('dai');
+        $theme = theme_config::load('nfdai');
     }
     if (empty($theme->settings->$setting)) {
         return false;

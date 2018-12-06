@@ -6,7 +6,7 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_dai/navbar}}
+    {{>theme_nfdai/navbar}}
 
     <div id="page" class="container-fluid">
         {{{ output.full_header }}}
@@ -18,6 +18,7 @@
                     <div> {{{ output.region_main_settings_menu }}} </div>
                 </div>
                 {{/hasregionmainsettingsmenu}}
+
                 <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
                     <div class="card">
                         <div class="card-body">
@@ -25,24 +26,22 @@
                                 <div class="region_main_settings_menu_proxy"></div>
                             {{/hasregionmainsettingsmenu}}
                             {{{ output.course_content_header }}}
-                            {{{ output.main_content }}}
+
+                           {{{ output.main_content }}}
                             {{{ output.activity_navigation }}}
                             {{{ output.course_content_footer }}}
                         </div>
                     </div>
                 </section>
-                {{#hasblocks}}
-                <section data-region="blocks-column" class="d-print-none">
-                    {{{ sidepreblocks }}}
-                </section>
-                {{/hasblocks}}
+                
             </div>
         </div>
     </div>
-    {{> theme_boost/nav-drawer }}
+    {{> theme_nfdai/nav-drawer }}
+
 </div>
 
-{{> theme_dai/footer }}
+{{> theme_nfdai/footer }}
 
 </body>
 </html>
@@ -51,4 +50,115 @@ require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
+
+$(document).ready(function() {
+    manageControls();
+    $( ".coursesrow" ).each(function( index ) {
+        var totalNumberOfBoxes= $( this ).find('.class-box').length;
+        if (totalNumberOfBoxes*300 < $(window).width()){
+            $(this).next().hide();
+        }else{
+             $(this).next().show();
+        }      
+    });
+    $('.coursesrow').each(function(){
+                $(this).nfSlider({
+                    c: 1,
+                    a : 0,
+                    active:false
+                });
+    }); 
+});
+$(window).on('resize', function(){
+    manageControls();
+});
+var manageControls = function(){
+    $( ".coursesrow" ).each(function( index ) {
+           var totalNumberOfBoxes= $( this ).find('.class-box').length;
+            if (totalNumberOfBoxes*300 < $(window).width()){
+                $(this).next().hide();
+            }else{
+                 $('.right-arrow i').css('opacity','1');
+                 $('.left-arrow i').css('opacity','1');
+                 $(this).next().show();
+                $(this).next().find('.right-arrow').hide();
+            }
+            // hide right arrow           
+        });
+};
+
+(function($){
+    $.fn.nfSlider = function(options) {  
+        var opt = {        };   
+        if (options) { 
+                $.extend(opt, options);
+        } 
+        let a= opt.a;
+        let c = opt.c
+        let active = opt.active;
+        var originalLeft = 0;
+        var boxWidth = 300 + 20;
+                   
+        var container = $(this);
+        this.active = false;
+        // get total number of boxes in order to cal. the width 
+        let total = $(this).closest('.catcourseswrap').children().children().length -2 ;
+        var width = total * boxWidth; 
+        var visibleBoxes = Math.floor($(window).width()/ boxWidth);
+
+        var target = container.closest('.catcourseswrap').children().first();
+        target.css('width', width);
+        container.prev().show();
+        var Slider = function(){
+            this.navNext = container.next().children('.right-arrow');
+            this.navPrev = container.next().children('.left-arrow');       
+
+            this.navPrev.bind ('click', function() { 
+
+                if (active === false){     
+                    if (c + visibleBoxes === total+1 ) {
+                         a = originalLeft;
+                         c = 1;
+                        $(this).prev().hide();  
+                    }else{
+                         $(this).prev().show();  
+                         a = '-='+boxWidth;
+                         c++;
+                    }
+                    active = true;
+                    target.animate(
+                         {left: a},
+                         {duration:500,
+                             complete: function(){
+                             active = false;
+                             }
+                     });
+                  }
+            });
+             this.navNext.bind ('click', function() { 
+                if ( active === false){
+                    if (c === 1){              
+                        a = 0;
+                        $(this).hide();                 
+                    }else{
+                        //$(this).show();
+                       a = '+='+boxWidth;
+                        c--;
+                    }
+                    active = true;
+                    target.animate(
+                    {left: a},
+                    {duration:500,
+                            complete: function(){
+                               active = false;
+                            }
+                    }); 
+
+                }
+            });                     
+    } // End Slider Object
+    var slider = new Slider();           
+};  // End Plugin   
+})(jQuery);
+
 {{/js}}

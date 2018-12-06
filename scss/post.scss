@@ -1,24 +1,4 @@
 
-// Post SCSS
-@font-face {
-  font-family: "Source Sans Pro";
-  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-}
-
-nav.fixed-top {
- 
-  background:$backgroundcolor;
-  color: white !important;
-  ul.navbar-nav a.dropdown-toggle {
-    color: white !important;
-  }
-  div.popover-region-toggle .fa {
-    color: white !important;
-  }
-}
-
 span.site-name {
   color: white !important;
 }
@@ -29,21 +9,12 @@ span.login a {
 
 button[data-preference="drawer-open-nav"] {
   color: white !important;
-  background-color: rgba(85,114,161, 0);
+  background-color: $nfblue;
   border: rgba(255,255,255, .5);
 }
 
 button[data-preference="drawer-open-nav"]:hover {
-  background-color: rgba(85,114,161, 0.9);
-}
-
-#page-footer{
-  background: #e2e2e2 !important;
-  color: black !important;
-}
-
-#page-footer a {
-  color: #223657 !important;
+  background-color:$nfbluetransparent;
 }
 
 a:link {
@@ -55,7 +26,7 @@ a:link {
 }
 
 #action-menu-99-menu {
-  a {
+/*  a {
     color: rgb(51, 51, 51) !important;
     outline-color: rgb(51, 51, 51) !important;
     font-size: 14px !important;
@@ -64,7 +35,7 @@ a:link {
     padding: 3px 15px 3px 10px !important;
     text-align: left !important;
     box-sizing: border-box !important;
-  }
+  }*/
   li {
     list-style-type: none !important;
   }
@@ -80,37 +51,11 @@ a:link {
 
 #daicoursesearch {
 
-  .searchContainer {
-    height: 2.5em !important;
-    display: inline-flex;
-    flex: 1 1 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 300px !important;
-  }
-
-  .searchIcon {
-    padding: 0.3rem;
-  }
-
-  .searchBox {
-    border: 0;
-    flex: 1;
-  }
-
-  .searchButton {
-    background: white;
-    border: 0;
-    color: rgba(85,114,161,.9);
-    padding: 0.3rem;
-    border-radius: 0;
-  }
 
 }
 
 .in-nav {
-  padding-top: 0.25rem;
+  padding-top: 0.1rem;
 }
 
 span.login {
@@ -119,11 +64,4 @@ span.login {
 
 a.login-link {
   color: white !important;
-}
-
-.courseimage {
-  img {
-    max-height: 400px !important;
-    max-width: 400px !important;
-  }
 }
